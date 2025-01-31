@@ -9,15 +9,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode inputUp = KeyCode.UpArrow;
     public KeyCode inputDown = KeyCode.DownArrow;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        rb2d = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
+    void HandleMovement()
     {
         float inputX = 0;
         float inputY = 0;
@@ -45,5 +37,24 @@ public class PlayerController : MonoBehaviour
             direction.Normalize();
         }
         rb2d.linearVelocity = direction * speed;
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        rb2d = GetComponent<Rigidbody2D>();
+    }
+
+    void PlaceBomb()
+    {
+        if (Input.GetKeyDown(KeyCode.RightShift)) 
+        {
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        HandleMovement();  
     }
 }
