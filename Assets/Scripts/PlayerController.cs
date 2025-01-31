@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public KeyCode inputUp = KeyCode.UpArrow;
     public KeyCode inputDown = KeyCode.DownArrow;
 
+    public GameObject bombPrefab;
+
     void HandleMovement()
     {
         float inputX = 0;
@@ -45,10 +47,13 @@ public class PlayerController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    void PlaceBomb()
+    void HandlePlaceBomb()
     {
         if (Input.GetKeyDown(KeyCode.RightShift)) 
         {
+            Vector3 bombPosition = transform.position;
+            bombPosition = new Vector3(Mathf.Round(bombPosition.x), Mathf.Round(bombPosition.y), 0f);
+            Instantiate(bombPrefab, bombPosition, Quaternion.identity);
         }
     }
 
@@ -56,5 +61,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleMovement();  
+        HandlePlaceBomb();
     }
 }
