@@ -2743,10 +2743,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  inputLeft: 97
-  inputRight: 100
-  inputUp: 119
-  inputDown: 115
+  inputLeft: 276
+  inputRight: 275
+  inputUp: 273
+  inputDown: 274
+  bombPrefab: {fileID: 7750839876192612693, guid: 1af902401e80500439d7132a6cdc1a19, type: 3}
 --- !u!61 &761432936
 BoxCollider2D:
   m_ObjectHideFlags: 0
