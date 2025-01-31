@@ -4,10 +4,10 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5;
     Rigidbody2D rb2d;
-    public KeyCode inputLeft = KeyCode.A;
-    public KeyCode inputRight = KeyCode.D;
-    public KeyCode inputUp = KeyCode.W;
-    public KeyCode inputDown = KeyCode.S;
+    public KeyCode inputLeft = KeyCode.LeftArrow;
+    public KeyCode inputRight = KeyCode.RightArrow;
+    public KeyCode inputUp = KeyCode.UpArrow;
+    public KeyCode inputDown = KeyCode.DownArrow;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
