@@ -101,3 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 3544503065422655128, guid: 62c8d76d9885cec40902788687b5f1e3, type: 3}
+  frames:
+  - {fileID: 21300144, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300146, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300148, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300150, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300152, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300100, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  framesPerSecond: 3
