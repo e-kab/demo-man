@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode inputRight = KeyCode.RightArrow;
     public KeyCode inputUp = KeyCode.UpArrow;
     public KeyCode inputDown = KeyCode.DownArrow;
-    public KeyCode inputDown = KeyCode.DownArrow;
+    public KeyCode placeBomb = KeyCode.LeftShift;
 
 
     public GameObject bombPrefab;
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
     void HandlePlaceBomb()
     {
-        if (Input.GetKeyDown(KeyCode.RightShift)) 
+        if (Input.GetKeyDown(placeBomb)) 
         {
             Vector3 bombPosition = transform.position;
             bombPosition = new Vector3(Mathf.Round(bombPosition.x), Mathf.Round(bombPosition.y), 0f);
