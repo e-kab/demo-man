@@ -78,46 +78,41 @@ public class Explosion : MonoBehaviour
 
         if (rightHit.collider != null)
         {
-            Debug.Log("Right Side Hit");
-            /*
+            // Debug.Log("Right Side Hit");
+
             if (rightHit.collider.GetComponent<PlayerController>() != null)
             {
-                Debug.Log("Hit");
+                Debug.Log("Player Hit");
             }
-            */
         }
 
         if (leftHit.collider != null)
         {
-            Debug.Log("Left Side Hit");
-            /*
-            if (rightHit.collider.GetComponent<PlayerController>() != null)
+            // Debug.Log("Left Side Hit");
+            
+            if (leftHit.collider.GetComponent<PlayerController>() != null)
             {
-                Debug.Log("Hit");
+                Debug.Log("Player Hit");
             }
-            */
+           
         }
 
         if (upHit.collider != null)
         {
-            Debug.Log("Up Side Hit");
-            /*
-            if (rightHit.collider.GetComponent<PlayerController>() != null)
+            // Debug.Log("Up Side Hit");
+            if (upHit.collider.GetComponent<PlayerController>() != null)
             {
-                Debug.Log("Hit");
+                Debug.Log("Player Hit");
             }
-            */
         }
 
         if (downHit.collider != null)
         {
-            Debug.Log("Down Side Hit");
-            /*
-            if (rightHit.collider.GetComponent<PlayerController>() != null)
+            // Debug.Log("Down Side Hit");
+            if (downHit.collider.GetComponent<PlayerController>() != null)
             {
-                Debug.Log("Hit");
+                Debug.Log("Player Hit");
             }
-            */
         }
     }
 }
