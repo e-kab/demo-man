@@ -62,12 +62,19 @@ public class Explosion : MonoBehaviour
 
         RaycastHit2D leftHit = Physics2D.Raycast(origin, leftDirection, leftDistance);
 
-        // Left Hit Detection
+        // Up Hit Detection
         Vector3 upBlast = transform.position + (new Vector3(0, 2, 0));
         Vector3 upDirection = (upBlast - origin).normalized;
         float upDistance = Vector3.Distance(origin, upBlast);
 
         RaycastHit2D upHit = Physics2D.Raycast(origin, upDirection, upDistance);
+
+        // Down Hit Detection
+        Vector3 downBlast = transform.position - (new Vector3(0, 2, 0));
+        Vector3 downDirection = (downBlast - origin).normalized;
+        float downDistance = Vector3.Distance(origin, downBlast);
+
+        RaycastHit2D downHit = Physics2D.Raycast(origin, downDirection, downDistance);
 
         if (rightHit.collider != null)
         {
@@ -94,6 +101,17 @@ public class Explosion : MonoBehaviour
         if (upHit.collider != null)
         {
             Debug.Log("Up Side Hit");
+            /*
+            if (rightHit.collider.GetComponent<PlayerController>() != null)
+            {
+                Debug.Log("Hit");
+            }
+            */
+        }
+
+        if (downHit.collider != null)
+        {
+            Debug.Log("Down Side Hit");
             /*
             if (rightHit.collider.GetComponent<PlayerController>() != null)
             {
