@@ -82,9 +82,10 @@ public class Explosion : MonoBehaviour
 
             if (rightHit.collider.GetComponent<PlayerController>() != null)
             {
-                Debug.Log("Player Hit");
+                rightHit.collider.GetComponent<PlayerController>().ReloadScene();
 
-            } else if (rightHit.collider.GetComponent<Box>() != null)
+            }
+            else if (rightHit.collider.GetComponent<Box>() != null)
             {
                 rightHit.collider.GetComponent<Box>().Break();
             }
