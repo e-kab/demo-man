@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public KeyCode inputRight = KeyCode.RightArrow;
     public KeyCode inputUp = KeyCode.UpArrow;
     public KeyCode inputDown = KeyCode.DownArrow;
+    public KeyCode inputDown = KeyCode.DownArrow;
+
 
     public GameObject bombPrefab;
 
