@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using static UnityEngine.GraphicsBuffer;
+using Unity.VisualScripting;
 
 public class Explosion : MonoBehaviour
 {
@@ -32,11 +34,31 @@ public class Explosion : MonoBehaviour
             currentFrameIndex++;
             if (currentFrameIndex >= frames.Length)
             {
+                Explode();
                 Destroy(gameObject);
                 return;
             }
             frameTimer = (1f / framesPerSecond);
             spriteRenderer.sprite = frames[currentFrameIndex];
+        }
+    }
+
+    void Explode()
+    {
+        Vector3 origin = transform.position;
+        Vector3 rightBlast = transform.position + (new Vector3(2,0,0));
+        Vector3 rightDirection = (rightBlast - origin).normalized;
+        float rightDistance = Vector3.Distance(origin, rightBlast);
+
+        RaycastHit2D rightHit = Physics2D.Raycast(origin, rightDirection, rightDistance);
+
+        if (rightHit.collider != null)
+        {
+
+            if (rightHit.collider.GetComponent<PlayerController>() != null)
+            {
+                Debug.Log("Hit");
+            }
         }
     }
 }
