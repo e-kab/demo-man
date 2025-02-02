@@ -126,6 +126,7 @@ public class Explosion : MonoBehaviour
                 Debug.Log("Player Hit");
             } else if (downHit.collider.GetComponent<Box>() != null)
             {
+                downHit.collider.GetComponent<Box>().Break();
 
             }
         }
