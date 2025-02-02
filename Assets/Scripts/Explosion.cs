@@ -99,7 +99,8 @@ public class Explosion : MonoBehaviour
                 Debug.Log("Player Hit");
             } else if (leftHit.collider.GetComponent<Box>() != null)
             {
-                Debug.Log("Box Hit");
+                leftHit.collider.GetComponent<Box>().Break();
+
             }
 
         }
@@ -112,7 +113,6 @@ public class Explosion : MonoBehaviour
                 Debug.Log("Player Hit");
             } else if (upHit.collider.GetComponent<Box>() != null)
             {
-                Debug.Log("Box Hit");
             }
         }
 
@@ -124,7 +124,7 @@ public class Explosion : MonoBehaviour
                 Debug.Log("Player Hit");
             } else if (downHit.collider.GetComponent<Box>() != null)
             {
-                Debug.Log("Box Hit");
+
             }
         }
     }
