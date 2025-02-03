@@ -5,6 +5,9 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5;
     Rigidbody2D rb2d;
+    SpriteRenderer spriteRenderer;
+
+
     public KeyCode inputLeft = KeyCode.LeftArrow;
     public KeyCode inputRight = KeyCode.RightArrow;
     public KeyCode inputUp = KeyCode.UpArrow;
@@ -14,6 +17,10 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bombPrefab;
 
+    public Sprite spriteUp;
+    public Sprite spriteDown;
+    public Sprite spriteSide;
+
     void HandleMovement()
     {
         float inputX = 0;
@@ -22,18 +29,26 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(inputUp))
         {
             inputY = 1;
+            spriteRenderer.sprite = spriteUp;
+
         }
         if (Input.GetKey(inputDown))
         {
             inputY = -1;
+            spriteRenderer.sprite = spriteDown;
+
         }
         if (Input.GetKey(inputLeft))
         {
             inputX = -1;
+            spriteRenderer.sprite = spriteSide;
+            spriteRenderer.flipX = true;
         }
         if (Input.GetKey(inputRight))
         {
             inputX = 1;
+            spriteRenderer.sprite = spriteSide;
+            spriteRenderer.flipX = false;
         }
 
         Vector2 direction = new Vector2(inputX, inputY);
@@ -48,6 +63,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     void HandlePlaceBomb()
