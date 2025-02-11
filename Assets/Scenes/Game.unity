@@ -2653,7 +2653,7 @@ GameObject:
   - component: {fileID: 761432935}
   - component: {fileID: 761432936}
   - component: {fileID: 761432937}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: player1_down1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8769,7 +8769,7 @@ GameObject:
   - component: {fileID: 2081279873}
   - component: {fileID: 2081279872}
   - component: {fileID: 2081279871}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: player1_down1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
