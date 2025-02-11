@@ -16,7 +16,6 @@ public class Bomb : MonoBehaviour
 
     private BoxCollider2D bombCollider;
     private GameObject placingPlayer;
-    private bool playerInside = false;
 
     public void SetPlacingPlayer(GameObject player)
     {
@@ -61,7 +60,6 @@ public class Bomb : MonoBehaviour
         if (other.gameObject == placingPlayer)
         {
             // Debug.Log("Player exited bomb trigger");
-            playerInside = false;
             bombCollider.isTrigger = false;  // Solidify once the player leaves
         }
     }
