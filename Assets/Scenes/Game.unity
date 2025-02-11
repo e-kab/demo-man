@@ -8867,9 +8867,16 @@ MonoBehaviour:
   spriteUp: {fileID: 21300104, guid: d12c57928542b92438bb08ca14ede744, type: 3}
   spriteDown: {fileID: 21300106, guid: d12c57928542b92438bb08ca14ede744, type: 3}
   spriteSide: {fileID: 21300112, guid: d12c57928542b92438bb08ca14ede744, type: 3}
-  upFrames: []
-  downFrames: []
-  sideFrames: []
+  upFrames:
+  - {fileID: 21300120, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300122, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  downFrames:
+  - {fileID: 21300108, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300110, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  sideFrames:
+  - {fileID: 21300114, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300116, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300118, guid: d12c57928542b92438bb08ca14ede744, type: 3}
 --- !u!212 &2081279874
 SpriteRenderer:
   m_ObjectHideFlags: 0
