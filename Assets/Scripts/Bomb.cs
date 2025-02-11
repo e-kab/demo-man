@@ -14,10 +14,14 @@ public class Bomb : MonoBehaviour
     int currentFrameIndex = 0;
     float frameTimer;
 
+    private BoxCollider2D bombCollider;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        bombCollider = GetComponent<BoxCollider2D>();
         frameTimer = (1f / framesPerSecond);
         currentFrameIndex = 0;
         Invoke("Explode", 2f);
