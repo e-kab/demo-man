@@ -2755,14 +2755,19 @@ MonoBehaviour:
   spriteSide: {fileID: 21300026, guid: d12c57928542b92438bb08ca14ede744, type: 3}
   upFrames:
   - {fileID: 21300034, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300018, guid: d12c57928542b92438bb08ca14ede744, type: 3}
   - {fileID: 21300036, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300018, guid: d12c57928542b92438bb08ca14ede744, type: 3}
   downFrames:
   - {fileID: 21300022, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300020, guid: d12c57928542b92438bb08ca14ede744, type: 3}
   - {fileID: 21300024, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300020, guid: d12c57928542b92438bb08ca14ede744, type: 3}
   sideFrames:
   - {fileID: 21300028, guid: d12c57928542b92438bb08ca14ede744, type: 3}
   - {fileID: 21300030, guid: d12c57928542b92438bb08ca14ede744, type: 3}
   - {fileID: 21300032, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300030, guid: d12c57928542b92438bb08ca14ede744, type: 3}
 --- !u!61 &761432936
 BoxCollider2D:
   m_ObjectHideFlags: 0
