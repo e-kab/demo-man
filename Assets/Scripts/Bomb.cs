@@ -15,6 +15,9 @@ public class Bomb : MonoBehaviour
     float frameTimer;
 
     private BoxCollider2D bombCollider;
+    private GameObject placingPlayer;
+    private bool playerInside = false;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
