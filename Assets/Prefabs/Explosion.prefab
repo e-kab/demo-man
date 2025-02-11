@@ -50,6 +50,9 @@ MonoBehaviour:
   - {fileID: 21300132, guid: d12c57928542b92438bb08ca14ede744, type: 3}
   - {fileID: 21300102, guid: d12c57928542b92438bb08ca14ede744, type: 3}
   framesPerSecond: 5
+  explosionRadius: 3
+  verticalBlast: {fileID: 993274387299688038, guid: f3bbe6b5ec07f2f4ebd0a1b705421bec, type: 3}
+  horizontalBlast: {fileID: 4959317519955943696, guid: dfe76293aa73e7a4791839ec24243722, type: 3}
 --- !u!212 &-4711326523573041289
 SpriteRenderer:
   m_ObjectHideFlags: 0
