@@ -21,7 +21,7 @@ public class Bomb : MonoBehaviour
     public void SetPlacingPlayer(GameObject player)
     {
         placingPlayer = player;  // Store the player that placed the bomb
-        Debug.Log("Placing Player: " + placingPlayer.name); // Debugging
+        // Debug.Log("Placing Player: " + placingPlayer.name); // Debugging
     }
 
 
@@ -60,7 +60,7 @@ public class Bomb : MonoBehaviour
     {
         if (other.gameObject == placingPlayer)
         {
-            Debug.Log("Player exited bomb trigger");
+            // Debug.Log("Player exited bomb trigger");
             playerInside = false;
             bombCollider.isTrigger = false;  // Solidify once the player leaves
         }
