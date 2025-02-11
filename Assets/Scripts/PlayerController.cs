@@ -73,6 +73,14 @@ public class PlayerController : MonoBehaviour
             direction.Normalize();
         }
         rb2d.linearVelocity = direction * speed;
+        if (direction.magnitude > 0)
+        {
+            spriteRenderer.sprite = GetAnimationFrame(lastDirection);
+        }
+        else
+        {
+            spriteRenderer.sprite = GetIdleSprite(lastDirection);
+        }
     }
 
     Sprite GetAnimationFrame(Vector2 direction)
