@@ -106,6 +106,16 @@ public class PlayerController : MonoBehaviour
         return frames[index];
     }
 
+    Sprite GetIdleSprite(Vector2 direction)
+    {
+        if (direction == Vector2.up)
+            return spriteUp;
+        if (direction == Vector2.down)
+            return spriteDown;
+        if (direction == Vector2.left)
+            return spriteSide;
+        return spriteSide;
+    }
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
