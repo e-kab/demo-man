@@ -20,7 +20,8 @@ public class Bomb : MonoBehaviour
 
     public void SetPlacingPlayer(GameObject player)
     {
-        placingPlayer = player;  // Track the player who placed the bomb
+        placingPlayer = player;  // Store the player that placed the bomb
+        Debug.Log("Placing Player: " + placingPlayer.name); // Debugging
     }
 
 
@@ -53,5 +54,15 @@ public class Bomb : MonoBehaviour
     {
         Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject == placingPlayer)
+        {
+            Debug.Log("Player exited bomb trigger");
+            playerInside = false;
+            bombCollider.isTrigger = false;  // Solidify once the player leaves
+        }
     }
 }

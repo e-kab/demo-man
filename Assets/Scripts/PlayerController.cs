@@ -152,7 +152,8 @@ public class PlayerController : MonoBehaviour
             hit = Physics2D.Raycast(origin, direction, distance, ~LayerMask.GetMask("Player"));
             if (hit.collider == null)
             {
-                Instantiate(bombPrefab, bombPosition, Quaternion.identity);
+                GameObject bomb = Instantiate(bombPrefab, bombPosition, Quaternion.identity);
+                bomb.GetComponent<Bomb>().SetPlacingPlayer(gameObject);
 
             }
         }
