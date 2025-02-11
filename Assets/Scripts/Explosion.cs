@@ -12,7 +12,7 @@ public class Explosion : MonoBehaviour
     [Tooltip("How fast does the animation play")]
     public float framesPerSecond = 5;
     [Tooltip("Explosion radius in units")]
-    public int explosionRadius = 3;
+    public int explosionRadius = 2;
     [Tooltip("Explosion prefab to instantiate")]
     public GameObject explosionPrefab;
 
@@ -81,7 +81,7 @@ public class Explosion : MonoBehaviour
         if (rightHit.collider != null)
         {
 
-            Debug.Log($"Right Side Hit at {rightHit.point} on {rightHit.collider.name}");
+            // Debug.Log($"Right Side Hit at {rightHit.point} on {rightHit.collider.name}");
             if (rightHit.collider.GetComponent<PlayerController>() != null)
             {
                 rightHit.collider.GetComponent<PlayerController>().ReloadScene();
@@ -95,7 +95,7 @@ public class Explosion : MonoBehaviour
 
         if (leftHit.collider != null)
         {
-            Debug.Log($"Left Side Hit at {leftHit.point} on {leftHit.collider.name}");
+            // Debug.Log($"Left Side Hit at {leftHit.point} on {leftHit.collider.name}");
             if (leftHit.collider.GetComponent<PlayerController>() != null)
             {
                 leftHit.collider.GetComponent<PlayerController>().ReloadScene();
@@ -108,7 +108,7 @@ public class Explosion : MonoBehaviour
 
         if (upHit.collider != null)
         {
-            Debug.Log("Up Side Hit: " + upHit.collider.name);
+            // Debug.Log("Up Side Hit: " + upHit.collider.name);
             if (upHit.collider.GetComponent<PlayerController>() != null)
             {
                 upHit.collider.GetComponent<PlayerController>().ReloadScene();
@@ -121,7 +121,7 @@ public class Explosion : MonoBehaviour
 
         if (downHit.collider != null)
         {
-            Debug.Log($"Down Side Hit at {downHit.point} on {downHit.collider.name}");
+            // Debug.Log($"Down Side Hit at {downHit.point} on {downHit.collider.name}");
             if (downHit.collider.GetComponent<PlayerController>() != null)
             {
                 downHit.collider.GetComponent<PlayerController>().ReloadScene();
