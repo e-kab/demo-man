@@ -1,3 +1,4 @@
+using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -139,8 +140,21 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(placeBomb)) 
         {
             Vector3 bombPosition = transform.position;
+
+            RaycastHit2D hit = new RaycastHit2D();
+            Vector3 origin = transform.position;
             bombPosition = new Vector3(Mathf.Round(bombPosition.x), Mathf.Round(bombPosition.y), 0f);
-            Instantiate(bombPrefab, bombPosition, Quaternion.identity);
+            
+            Vector3 direction = bombPosition - origin;
+            float distance = direction.magnitude;
+
+
+            hit = Physics2D.Raycast(origin, direction, distance, ~LayerMask.GetMask("Player"));
+            if (hit.collider == null)
+            {
+                Instantiate(bombPrefab, bombPosition, Quaternion.identity);
+
+            }
         }
     }
 
