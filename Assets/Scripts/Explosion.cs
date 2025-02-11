@@ -49,45 +49,39 @@ public class Explosion : MonoBehaviour
 
     void Explode()
     {
+        Vector3 origin = transform.position;
 
         // Right Hit Detection
-        Vector3 origin = transform.position;
-        Vector3 rightBlast = transform.position + (new Vector3(explosionRadius, 0,0));
+        Vector3 rightBlast = origin + new Vector3(explosionRadius, 0, 0);
         Vector3 rightDirection = (rightBlast - origin).normalized;
         float rightDistance = Vector3.Distance(origin, rightBlast);
-
         RaycastHit2D rightHit = Physics2D.Raycast(origin, rightDirection, rightDistance);
 
-
         // Left Hit Detection
-        Vector3 leftBlast = transform.position - (new Vector3(explosionRadius, 0, 0));
+        Vector3 leftBlast = origin - new Vector3(explosionRadius, 0, 0);
         Vector3 leftDirection = (leftBlast - origin).normalized;
         float leftDistance = Vector3.Distance(origin, leftBlast);
-
         RaycastHit2D leftHit = Physics2D.Raycast(origin, leftDirection, leftDistance);
 
         // Up Hit Detection
-        Vector3 upBlast = transform.position + (new Vector3(0, explosionRadius, 0));
+        Vector3 upBlast = origin + new Vector3(0, explosionRadius, 0);
         Vector3 upDirection = (upBlast - origin).normalized;
         float upDistance = Vector3.Distance(origin, upBlast);
-
         RaycastHit2D upHit = Physics2D.Raycast(origin, upDirection, upDistance);
 
         // Down Hit Detection
-        Vector3 downBlast = transform.position - (new Vector3(0, explosionRadius, 0));
+        Vector3 downBlast = origin - new Vector3(0, explosionRadius, 0);
         Vector3 downDirection = (downBlast - origin).normalized;
         float downDistance = Vector3.Distance(origin, downBlast);
-
         RaycastHit2D downHit = Physics2D.Raycast(origin, downDirection, downDistance);
 
+        // Handle collisions
         if (rightHit.collider != null)
         {
-            // Debug.Log("Right Side Hit");
-
+            Debug.Log($"Right Side Hit at {rightHit.point} on {rightHit.collider.name}");
             if (rightHit.collider.GetComponent<PlayerController>() != null)
             {
                 rightHit.collider.GetComponent<PlayerController>().ReloadScene();
-
             }
             else if (rightHit.collider.GetComponent<Box>() != null)
             {
@@ -97,8 +91,7 @@ public class Explosion : MonoBehaviour
 
         if (leftHit.collider != null)
         {
-            // Debug.Log("Left Side Hit");
-            
+            Debug.Log($"Left Side Hit at {leftHit.point} on {leftHit.collider.name}");
             if (leftHit.collider.GetComponent<PlayerController>() != null)
             {
                 leftHit.collider.GetComponent<PlayerController>().ReloadScene();
@@ -106,14 +99,12 @@ public class Explosion : MonoBehaviour
             else if (leftHit.collider.GetComponent<Box>() != null)
             {
                 leftHit.collider.GetComponent<Box>().Break();
-
             }
-
         }
 
         if (upHit.collider != null)
         {
-            // Debug.Log("Up Side Hit");
+            Debug.Log("Up Side Hit: " + upHit.collider.name);
             if (upHit.collider.GetComponent<PlayerController>() != null)
             {
                 upHit.collider.GetComponent<PlayerController>().ReloadScene();
@@ -121,13 +112,12 @@ public class Explosion : MonoBehaviour
             else if (upHit.collider.GetComponent<Box>() != null)
             {
                 upHit.collider.GetComponent<Box>().Break();
-
             }
         }
 
         if (downHit.collider != null)
         {
-            // Debug.Log("Down Side Hit");
+            Debug.Log($"Down Side Hit at {downHit.point} on {downHit.collider.name}");
             if (downHit.collider.GetComponent<PlayerController>() != null)
             {
                 downHit.collider.GetComponent<PlayerController>().ReloadScene();
@@ -135,8 +125,8 @@ public class Explosion : MonoBehaviour
             else if (downHit.collider.GetComponent<Box>() != null)
             {
                 downHit.collider.GetComponent<Box>().Break();
-
             }
         }
     }
+
 }
