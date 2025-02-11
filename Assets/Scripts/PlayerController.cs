@@ -99,13 +99,13 @@ public class PlayerController : MonoBehaviour
         else if (direction == Vector2.left)
         {
             frames = sideFrames;
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = true;
         }
   
         else
         {
             frames = sideFrames;
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = false;
 
 
         }
