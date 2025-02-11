@@ -18,6 +18,10 @@ public class Bomb : MonoBehaviour
     private GameObject placingPlayer;
     private bool playerInside = false;
 
+    public void SetPlacingPlayer(GameObject player)
+    {
+        placingPlayer = player;  // Track the player who placed the bomb
+    }
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,6 +29,8 @@ public class Bomb : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         bombCollider = GetComponent<BoxCollider2D>();
+        bombCollider.isTrigger = true;  // Start as trigger
+
         frameTimer = (1f / framesPerSecond);
         currentFrameIndex = 0;
         Invoke("Explode", 2f);
