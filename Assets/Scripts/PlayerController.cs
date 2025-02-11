@@ -39,12 +39,15 @@ public class PlayerController : MonoBehaviour
         {
             inputY = 1;
             spriteRenderer.sprite = spriteUp;
+            lastDirection = Vector2.up;
 
         }
         if (Input.GetKey(inputDown))
         {
             inputY = -1;
             spriteRenderer.sprite = spriteDown;
+            lastDirection = Vector2.down;
+
 
         }
         if (Input.GetKey(inputLeft))
@@ -52,12 +55,16 @@ public class PlayerController : MonoBehaviour
             inputX = -1;
             spriteRenderer.sprite = spriteSide;
             spriteRenderer.flipX = true;
+            lastDirection = Vector2.left;
+
         }
         if (Input.GetKey(inputRight))
         {
             inputX = 1;
             spriteRenderer.sprite = spriteSide;
             spriteRenderer.flipX = false;
+            lastDirection = Vector2.right;
+
         }
 
         Vector2 direction = new Vector2(inputX, inputY);
