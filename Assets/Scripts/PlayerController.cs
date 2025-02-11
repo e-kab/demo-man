@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode inputDown = KeyCode.DownArrow;
     public KeyCode placeBomb = KeyCode.LeftShift;
 
+    public float framesPerSecond = 5;
 
     public GameObject bombPrefab;
 
