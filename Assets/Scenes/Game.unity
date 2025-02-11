@@ -8881,6 +8881,7 @@ MonoBehaviour:
   - {fileID: 21300114, guid: d12c57928542b92438bb08ca14ede744, type: 3}
   - {fileID: 21300116, guid: d12c57928542b92438bb08ca14ede744, type: 3}
   - {fileID: 21300118, guid: d12c57928542b92438bb08ca14ede744, type: 3}
+  - {fileID: 21300116, guid: d12c57928542b92438bb08ca14ede744, type: 3}
 --- !u!212 &2081279874
 SpriteRenderer:
   m_ObjectHideFlags: 0
