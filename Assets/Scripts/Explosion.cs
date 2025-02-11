@@ -13,8 +13,6 @@ public class Explosion : MonoBehaviour
     public float framesPerSecond = 5;
     [Tooltip("Explosion radius in units")]
     public int explosionRadius = 2;
-    [Tooltip("Explosion prefab to instantiate")]
-    public GameObject explosionPrefab;
 
 
     SpriteRenderer spriteRenderer;
