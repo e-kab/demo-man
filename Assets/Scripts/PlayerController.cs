@@ -67,6 +67,37 @@ public class PlayerController : MonoBehaviour
         rb2d.linearVelocity = direction * speed;
     }
 
+    Sprite GetAnimationFrame(Vector2 direction)
+    {
+        Sprite[] frames;
+        if (direction == Vector2.up)
+        {
+            frames = upFrames;
+
+        }
+        else if (direction == Vector2.down)
+        {
+            frames = downFrames;
+
+        }
+        else if (direction == Vector2.left)
+        {
+            frames = sideFrames;
+            spriteRenderer.flipX = false;
+        }
+  
+        else
+        {
+            frames = sideFrames;
+            spriteRenderer.flipX = true;
+
+
+        }
+
+        int index = (int)(Time.time * framesPerSecond) % frames.Length;
+        return frames[index];
+    }
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
