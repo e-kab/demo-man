@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     public Sprite[] downFrames;
     public Sprite[] sideFrames;
 
+    private Vector2 lastDirection = Vector2.down;
+
+
     void HandleMovement()
     {
         float inputX = 0;
@@ -63,6 +66,8 @@ public class PlayerController : MonoBehaviour
         }
         rb2d.linearVelocity = direction * speed;
     }
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
