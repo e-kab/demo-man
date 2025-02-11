@@ -21,6 +21,11 @@ public class PlayerController : MonoBehaviour
     public Sprite spriteDown;
     public Sprite spriteSide;
 
+    // Walking animation frames
+    public Sprite[] upFrames;
+    public Sprite[] downFrames;
+    public Sprite[] sideFrames;
+
     void HandleMovement()
     {
         float inputX = 0;
